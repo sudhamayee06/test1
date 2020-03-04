@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="header">
+        <mat-icon>bar_chart</mat-icon>
+        <span>Car's Information</span>
+    </div>
+    <div class="actions-row">
+        <a mat-button color="primary" routerLink="details">Details</a>
+        <a mat-button color="primary" routerLink="history">View history</a>
+        <a mat-button color="accent" routerLink="edit">Add/Edit car</a>
+    </div>
+    <div class="container">
+        <router-outlet></router-outlet>
+        <div class="bottom-section">
+            <a mat-button color="primary" routerLink="/cars">Back</a>
+        </div>
+    </div>
+</div>

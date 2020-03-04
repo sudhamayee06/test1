@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row card-container">
+        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let car of cars">
+            <pms-car-tile [car]="car"></pms-car-tile>
+        </div>
+        <div *ngIf="!cars.length">
+            No cars found
+        </div>
+    </div>
+</div>

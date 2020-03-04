@@ -1,0 +1,28 @@
+.header {
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin: 20px 10px;
+}
+
+.registration-form {
+  display: flex;
+  justify-content: space-around;
+
+  mat-form-field {
+    width: 400px;
+  }
+
+  .centered {
+    justify-content: center;
+  }
+
+  .registration-errors {
+    color: firebrick;
+  }
+
+  div {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+{  
+   "active":[
+	{"username":"snapwiz","path":"\/home\/{{userName}}\/project\/application\/src\/app\/features\/cars\/cars.component.ts","focused":true},
+	{"username":"snapwiz","path":"\/home\/{{userName}}\/project\/application\/src\/app\/features\/cars\/cars.component.html","focused":false} 
+   ],
+   "projects":[  
+      {  
+         "name":"angular",
+         "path":"\/home\/{{userName}}\/project\/application",
+         "container_id":"testContainerId",
+         "collaboration":false,
+         "source":"{{xtermUrl}}",
+         "build":true,
+         "build_command":"kill -9 $(ps aux | grep \\\"[n]ode \\\" | awk '{print $2}');cd /home/{{userName}}/project/application;export NODE_PATH=$NODE_PATH:/home/$a/project/deps/node_modules;npm run task-build --crms:baseUrl=\\\"/browserurl/$DNAME/\\\" --no-update-notifier ;npm run task-start &",
+         "browser":true,
+         "browser_in_new_tab":true,
+         "browser_button_name":"LAUNCH APP",
+         "browser_url":"{{browserUrl}}",
+         "defaultOpenFolder":"\/home\/{{userName}}\/project\/application\/src\/app",
+         "readOnlyFolders":["\/home\/{{userName}}\/project\/application\/test","\/home\/{{userName}}\/project\/application\/README.txt"],
+         "hiddenFolders":["\/home\/{{userName}}\/project\/application\/node_modules"],
+         "hiddenFiles":["\/home\/{{userName}}\/project\/application\/package.json"]
+      }
+   ]
+}

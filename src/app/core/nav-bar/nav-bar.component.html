@@ -1,0 +1,21 @@
+<div>
+    <mat-toolbar color="primary">
+        <mat-icon class="logo">commute</mat-icon>
+        <span class="title">Car Rental Management System</span>
+        <div class="menu-buttons">
+            <a mat-button routerLink="/cars">Cars</a>
+            <button mat-button (click)="reports()">Reports</button>
+        </div>
+
+        <span class="space-filler"></span>
+
+        <div *ngIf="!isLoggedIn">
+            <button mat-button (click)="register()">Register</button>
+            <button mat-button (click)="logIn()">Login</button>
+        </div>
+        <div *ngIf="isLoggedIn" class="logged-in">
+            <span>Logged in as: {{username}}</span>
+            <button mat-button (click)="logOut()">Logout</button>
+        </div>
+    </mat-toolbar>
+</div>

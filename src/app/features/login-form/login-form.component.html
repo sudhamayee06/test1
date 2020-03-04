@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="header">
+        <mat-icon>how_to_reg</mat-icon>
+        <span>Login</span>
+    </div>
+    <div class="login-form">
+        <form [formGroup]="loginForm" (ngSubmit)="submit(loginForm)" class="login-form" novalidate>
+            <div class="login">
+                <div class="row">
+                    <mat-form-field>
+                        <input matInput placeholder="Enter your email" formControlName="login" required>
+                    </mat-form-field>
+                </div>
+                <br />
+                <div class="row">
+                    <mat-form-field>
+                        <input type="password" matInput placeholder="Enter your password" formControlName="password"
+                            required>
+                    </mat-form-field>
+                </div>
+                <br />
+                <div class="row centered">
+                    <span matTooltip="Please provide an e-mail and password" [matTooltipDisabled]="loginForm.valid">
+                        <button mat-stroked-button color="primary" type="submit" [disabled]="!loginForm.valid">
+                            Login
+                        </button>
+                    </span>
+                </div>
+                <br />
+                <div class="row demo">
+                    <span>*For demo\task mode, you can use demo@domain.com/demo01 as a login and password</span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

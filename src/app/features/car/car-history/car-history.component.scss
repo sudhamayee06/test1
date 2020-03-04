@@ -1,0 +1,27 @@
+.table {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+mat-card {
+    margin-top: 20px;
+
+    mat-card-content {
+        display: flex;
+        justify-content: space-around;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        
+        .general-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            color: dimgray;
+        }
+        
+        label:first-of-type {
+            margin-bottom: 10px;
+        }
+    }
+}

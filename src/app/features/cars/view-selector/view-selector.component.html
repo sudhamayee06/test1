@@ -1,0 +1,19 @@
+<button mat-icon-button [matMenuTriggerFor]="viewMenu">
+    <mat-icon>menu</mat-icon>
+    <span>View Mode</span>
+</button>
+
+<mat-menu #viewMenu="matMenu">
+    <button mat-menu-item (click)="changeViewMode(viewMode.Tile)">
+        <mat-icon>view_module</mat-icon>
+        <span>Tile View</span>
+    </button>
+    <button mat-menu-item (click)="changeViewMode(viewMode.Table)">
+        <mat-icon>view_headline</mat-icon>
+        <span>Table View</span>
+    </button>
+    <button mat-menu-item (click)="changeViewMode(viewMode.Map)">
+        <mat-icon>place</mat-icon>
+        <span>Map View</span>
+    </button>
+</mat-menu>

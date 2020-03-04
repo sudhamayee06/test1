@@ -1,0 +1,15 @@
+<h3 mat-dialog-title>
+    <div *ngIf="!data.headerText" class="header">
+        <mat-icon>help_outline</mat-icon>
+        <span>Confirmation</span>
+    </div>
+    <div *ngIf="data.headerText" class="header">
+        <span>{{data.headerText}}</span>
+    </div>
+</h3>
+<mat-dialog-content>{{data.message}}</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions>
+    <button mat-button (click)="dialogRef.close(true)">{{data.confirmButtonText}}</button>
+    <button *ngIf="data.cancelButton" mat-button (click)="dialogRef.close(false)">Cancel</button>
+</mat-dialog-actions>

@@ -1,0 +1,36 @@
+<div class="container">
+    <mat-card>
+        <mat-card-content>
+            <div class="general-info">
+                <label>Model: {{car?.model}}</label>
+                <label>Type: {{car?.type}}</label>
+            </div>
+            <div>
+                <label>Total balance: {{car?.totalBalance | currency:'USD':'symbol':'1.2-2'}}</label>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="table">
+        <mat-table #table [dataSource]="historyData" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="timestamp">
+                <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                <mat-cell *matCellDef="let record"> {{record?.timestamp | datetimetransform }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="event">
+                <mat-header-cell *matHeaderCellDef> Event </mat-header-cell>
+                <mat-cell *matCellDef="let record"> {{record?.event | capitalize }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="amount">
+                <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+                <mat-cell *matCellDef="let record"> {{record?.amount | currency:'USD':'symbol':'1.2-2'}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

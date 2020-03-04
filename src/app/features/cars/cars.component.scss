@@ -1,0 +1,18 @@
+.header {
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin: 20px 10px;
+}
+
+.actions-panel {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+
+    button {
+        margin-left: 15px;
+    }    
+}

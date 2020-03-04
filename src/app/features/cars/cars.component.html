@@ -1,0 +1,38 @@
+<div class="view indent">
+    <div class="container">
+        <div class="header">
+            <span>Cars</span>
+        </div>
+
+        <div class="actions-panel">
+            <div>
+                <button mat-button color="primary" (click)="addNewCar()">
+                    <mat-icon>add</mat-icon>
+                    <span>Add new car</span>
+                </button>
+                <pms-view-selector (viewModeChanged)="changeViewMode($event)"></pms-view-selector>
+            </div>
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter()" [(ngModel)]="searchString" matTooltip="Filter by model, type or city"
+                    placeholder="Filter" />
+                <button mat-button *ngIf="searchString" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div [ngSwitch]="selectedViewMode">
+        <pms-cars-tile-view *ngSwitchCase="viewMode.Tile" [cars]="filteredCars"></pms-cars-tile-view>
+        <pms-cars-table-view *ngSwitchCase="viewMode.Table" [cars]="filteredCars"></pms-cars-table-view>
+    </div>
+
+    <!-- 
+        To interact with pagination component, please add required bindings:
+        1) property: to pass a total number of items to the pagination component;
+        2) property: to pass a page size to the pagination component;
+        3) event: to listen `pageChanges` event raised by pagination component and calling `onPageParamsChanged()` method 
+    -->
+    <pms-pagination [totalItems]="totalRecords" [itemsPerPage]="pageSize" (pageChanges)="onPageParamsChanged($event)">
+    </pms-pagination>
+</div>

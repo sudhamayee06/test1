@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="info">
+        <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    General information
+                </mat-panel-title>
+                <mat-panel-description>
+                    Common / static information about the car
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="common-content">
+                <label>Id: {{car?.id}}</label>
+                <label>Model: {{car?.model}}</label>
+                <label>Type: {{car?.type}}</label>
+                <label>Age: {{car?.age}}</label>
+                <label>Total Balance: {{car?.totalBalance | currency:'USD':'symbol':'1.2-2'}}</label>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Detailed information
+                </mat-panel-title>
+                <mat-panel-description>
+                    Editable information
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="detailed-content">
+                <label>Available: {{car?.isAvailable | yesNo}}</label>
+                <label>Damaged: {{car?.isDamaged | yesNo}}</label>
+                <label>Comments: {{car?.Comments}}</label>
+                <label>Picture: {{car?.picture}}</label>
+                <label>Last Maintenance Date: {{car?.lastMaintenance | datetimetransform}}</label>
+                <label>Location: {{car?.address?.city}}, {{car?.address?.street}} {{car?.address?.building}},
+                    {{car?.address?.state}}, USA, {{car?.address?.zip}}
+                </label>
+                <label>Lat: {{car?.location?.latitude}}</label>
+                <label>Long: {{car?.location?.longitude}}</label>
+            </div>
+        </mat-expansion-panel>
+    </div>
+</div>

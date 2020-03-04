@@ -1,0 +1,42 @@
+<div class="pms-card">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{car.model}}</mat-card-title>
+            <mat-card-subtitle>{{car.type}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <mat-list dense>
+                <mat-list-item>
+                    <mat-icon matListIcon>done</mat-icon>
+                    <span>Available: {{car.isAvailable | yesNo }}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListIcon>build</mat-icon>
+                    <span>Damaged: {{car.isDamaged | yesNo }}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListIcon>home</mat-icon>
+                    <span>City: {{car.address?.city}}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon>schedule</mat-icon>
+                    <span>Last maintenance: {{car.lastMaintenance | datetransform }}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon>attach_money</mat-icon>
+                    <b>Total: {{car.totalBalance | currency:'USD':'symbol':'1.2-2'}}</b>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions>
+            <button mat-button color="primary" (click)="onEdit()">
+                Edit
+            </button>
+            <button mat-button color="primary" (click)="onDetails()">
+                View details
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
