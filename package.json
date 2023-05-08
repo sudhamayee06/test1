@@ -38,7 +38,7 @@
         "zone.js": "^0.8.19"
     },
     "devDependencies": {
-        "@angular/cli": "1.5.6",
+        "@angular/cli": "16.0.0",
         "@angular/compiler-cli": "^5.1.0",
         "@angular/language-service": "^5.1.0",
         "@angular/material-moment-adapter": "^6.4.7",
